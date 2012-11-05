@@ -1,0 +1,8 @@
+.gallery_demo{list-style:none;width:200px}
+.gallery_demo li{display:block;width:80px;height:80px;overflow:hidden;float:left;margin:0 10px 10px 0; padding:1px; opacity: 0.3;}
+.gallery_demo li:hover, .gallery_demo li.on{opacity: 1;}
+
+.galleria li.active div img,.galleria li.active div{display:block}
+.gallery_demoli img.thumb{cursor:pointer;top:auto;left:auto;display:block;width:auto;height:auto}
+.gallery_demo li .caption{display:block;padding-top:.5em}
+* html .gallery_demo li div span{width:400px} /* MSIE bug */

@@ -1,0 +1,30 @@
+<BOUCLE_contenu_rubrique(RUBRIQUES){id_rubrique}{tout}>
+<div class="demo">
+    <p class="navaga">
+<span class="project_title">
+<strong>Catalogs</strong>
+</span>
+</p>
+    </div>
+    <div style="float:left; width:90%; background-color:#FFF; height:auto; margin-top:10px; z-index: 990000;">     
+    <BOUCLE_docs(DOCUMENTS){id_rubrique}{extension IN png,jpg,gif,pdf}{!par date}>
+        #SET{link,''} 
+        [(#SET{logo,''})]               
+        <div class="publications">
+            <p>
+               [(#EXTENSION|=={pdf}|oui)
+                    [(#SET{link,</a>})]
+                    [(#SET{logo,#LOGO_DOCUMENT})]
+                    ]
+               [(#GET{link}|oui)<a href="#URL_DOCUMENT" target="_blank">] 
+               [(#GET{logo}|sinon{#FICHIER}|image_reduire{*,263}|inserer_attribut{alt,#TITRE})]
+               [(#GET{link})]
+            </p>
+            <p class="publications">
+                [(#GET{link}|oui)<a href="#URL_DOCUMENT" target="_blank">] 
+                <strong>“#TITRE”</strong>, [(#DATE|affdate{Y})][ <strong>(download)</strong>(#GET{link})]
+            </p>
+        </div>
+    </BOUCLE_docs>
+    </div>
+</BOUCLE_contenu_rubrique>

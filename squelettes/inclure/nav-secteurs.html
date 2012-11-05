@@ -1,0 +1,31 @@
+<div class="headerwrapper templateheader">
+	<div class="templateheader">
+		<a href="#URL_SITE_SPIP">#LOGO_SITE_SPIP</a>
+	</div>
+</div>
+  <div class="templateleftnav">
+	 <div class="templateleftnav">
+<B_rubriques>
+
+		<ul style="margin-top:5px; ">
+		 <BOUCLE_rubriques(RUBRIQUES) {id_rubrique !IN 1,4,16}{racine}{tout} {par num titre, titre}>
+			 <li[ class="(#EXPOSE)"]>
+				<a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a>
+			</li>
+		[(#COMPTEUR_BOUCLE|modulo{2}|=={0}|oui|et{#TOTAL_BOUCLE|!={#COMPTEUR_BOUCLE}|oui})
+		</ul>
+		<ul style="margin-top:5px; ">
+		]
+	 </BOUCLE_rubriques>
+		</ul>
+
+</B_rubriques>
+		<ul style="margin-top:5px; margin-left:75px; ">
+<BOUCLE_rub_others(RUBRIQUES) {id_rubrique IN 4,16}{racine}{tout}  {par num titre, titre}>
+			<li class="item menu-entree[ (#EXPOSE)]"><a style="color:#333333; font-weight:bolder; " href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a></li>
+</BOUCLE_rub_others>	
+			<li><a style="color:#003333;">&nbsp;</a></li>
+			<li><a style="color:#003333;">&nbsp;</a></li>
+		</ul>	 
+	 </div>
+  </div> 

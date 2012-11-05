@@ -1,0 +1,11 @@
+<BOUCLE_rubrique_head(RUBRIQUES) {id_rubrique}{tout}>
+<title>[(#TITRE|textebrut) - ][(#NOM_SITE_SPIP|textebrut)]</title>
+[<meta name="description" content="(#INTRODUCTION{150}|textebrut)" />]
+[<link rel="canonical" href="(#URL_RUBRIQUE|url_absolue)" />]
+
+[(#REM) Lien vers le flux RSS de la rubrique ]
+<link rel="alternate" type="application/rss+xml" title="<:syndiquer_rubrique:>" href="[(#URL_PAGE{backend}|parametre_url{id_rubrique,#ID_RUBRIQUE})]" />
+[(#ID_RUBRIQUE|=={4}|oui)
+    [<link rel="stylesheet" href="(#CSS{css/contact.css})" type="text/css" />]
+]
+</BOUCLE_rubrique_head>
