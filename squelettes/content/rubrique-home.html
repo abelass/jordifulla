@@ -1,0 +1,237 @@
+<BOUCLE_contenu_rubrique(RUBRIQUES){id_rubrique}{tout}>
+
+
+<BOUCLE_img_defaut(DOCUMENTS){id_rubrique}{extension IN gif,png,jpg}{tout}{0,1}{id_document=27}>
+<div id="bg"><img style="margin-left: 0px; margin-top: -46px; display: inline;" src="#FICHIER" alt="Benvinguts | Welcome | Bienvenue" title="Benvinguts | Welcome | Bienvenue" id="bgimg" height="681" width="909"></div>
+</BOUCLE_img_defaut>
+
+
+<div style="display: none;" id="preloader"><img src="#CHEMIN{javascript/img/ajax-loader_dark.gif}" height="32" width="32"></div>
+
+<div id="img_title">Benvinguts | Welcome | Bienvenue</div>
+
+<div id="toolbar" style="display:none;"><a href="#" title="Restore" onclick="ImageViewMode('normal');return false"><img src="Jordi%20Fulla%20%7C%20Artist_files/toolbar_n_icon.html" height="50" width="50"></a></div>
+
+<div id="rellotge">	
+	<a style="color:#000;" href="http://www.jordifulla.com/expo.html"><span id="cntdwn" style="background-color:none; color:none">Ja esta aqui!</span></a>
+</div>
+
+<div class="content templatecontent"></div><div class="templatefooter"><div class="templatefooter"><p>la web del fulla footer</p></div></div>
+
+<div id="content-wrapper"></div>
+
+<div style="opacity: 0.5;" id="outer_container">
+	<div style="width: 904px;" id="thumbnoScroller" class="outer_container">
+		<div style="left: 0px;" class="container">
+			<BOUCLE_thumbs(DOCUMENTS){id_rubrique}{extension IN gif,png,jpg}{tout}{par fichier}>
+			 <a href="[(#FICHIER|image_reduire{700,0}|extraire_attribut{src})]">[(#FICHIER
+			|image_passe_partout{70,44}
+			|image_recadre{70,44}
+		|inserer_attribut{class,thumb}
+		|inserer_attribut{alt,[(#TITRE|attribut_html|couper{80})]}
+		|inserer_attribut{title,[(#TITRE|attribut_html|couper{80})]}
+		)]</a>
+			</BOUCLE_thumbs>               
+ 	  </div>    
+  </div>
+</div>
+    
+<script>
+//set default view mode
+$defaultViewMode="full"; //full, normal, original
+//cache vars
+$outer_container=$("#outer_container");
+$thumbnoScroller=$("#thumbnoScroller");
+$thumbnoScroller_container=$("#thumbnoScroller .container");
+$thumbnoScroller_contingut=$("#thumbnoScroller .contingut");
+$thumbnoScroller_thumb=$("#thumbnoScroller .thumb");
+$preloader=$("#preloader");
+$toolbar=$("#toolbar");
+$toolbar_a=$("#toolbar a");
+$bgimg=$("#bgimg");
+
+$(window).load(function() {
+	$toolbar.data("imageViewMode",$defaultViewMode); //default view mode
+	if($defaultViewMode=="full"){
+		$toolbar_a.html("<img src='toolbar_n_icon.png' width='50' height='50'  />").attr("onClick", "ImageViewMode('normal');return false").attr("title", "Restore");
+	} else {
+		$toolbar_a.html("<img src='toolbar_fs_icon.png' width='50' height='50'  />").attr("onClick", "ImageViewMode('full');return false").attr("title", "Maximize");
+	}
+	//thumbnail scroller
+	sliderLeft=$thumbnoScroller_container.position().left;
+	padding=$outer_container.css("paddingRight").replace("px", "");
+	sliderWidth=$(window).width()-padding;
+	$thumbnoScroller.css("width",sliderWidth);
+	var totalcontingut=0;
+	fadeSpeed=200;
+	
+	$thumbnoScroller_contingut.each(function () {
+		var $this=$(this);
+		totalcontingut+=$this.innerWidth();
+		$thumbnoScroller_container.css("width",totalcontingut);
+		$this.children().children().children(".thumb").fadeTo(fadeSpeed, 0.6);
+	});
+
+	$thumbnoScroller.mousemove(function(e){
+		if($thumbnoScroller_container.width()>sliderWidth){
+	  		var mouseCoords=(e.pageX - this.offsetLeft);
+	  		var mousePercentX=mouseCoords/sliderWidth;
+	  		var destX=-(((totalcontingut-(sliderWidth))-sliderWidth)*(mousePercentX));
+	  		var thePosA=mouseCoords-destX;
+	  		var thePosB=destX-mouseCoords;
+	  		var animSpeed=600; //ease amount
+	  		var easeType="easeOutCirc";
+	  		if(mouseCoords>destX){
+		  		//$thumbnoScroller_container.css("left",-thePosA); //without easing
+		  		$thumbnoScroller_container.stop().animate({left: -thePosA}, animSpeed,easeType); //with easing
+	  		} else if(mouseCoords<destX){
+		  		//$thumbnoScroller_container.css("left",thePosB); //without easing
+		  		$thumbnoScroller_container.stop().animate({left: thePosB}, animSpeed,easeType); //with easing
+	  		} else {
+				$thumbnoScroller_container.stop();  
+	  		}
+		}
+	});
+
+	$outer_container.fadeTo(fadeSpeed, 0.8);
+	$outer_container.hover(
+		function(){ //mouse over
+			var $this=$(this);
+			$this.stop().fadeTo("slow", 1);
+		},
+		function(){ //mouse out
+			var $this=$(this);
+			$this.stop().fadeTo("slow", 0.5);
+		}
+	);
+
+	$thumbnoScroller_thumb.hover(
+		function(){ //mouse over
+			var $this=$(this);
+			$this.stop().fadeTo(fadeSpeed, 1);
+		},
+		function(){ //mouse out
+			var $this=$(this);
+			$this.stop().fadeTo(fadeSpeed, 0.6);
+		}
+	);
+
+	//on window resize scale image and reset thumbnail scroller
+	$(window).resize(function() {
+		FullScreenBackground("#bgimg",$bgimg.data("newImageW"),$bgimg.data("newImageH"));
+		$thumbnoScroller_container.stop().animate({left: sliderLeft}, 400,"easeOutCirc"); 
+		var newWidth=$(window).width()-padding;
+		$thumbnoScroller.css("width",newWidth);
+		sliderWidth=newWidth;
+	});
+
+	//load 1st image
+	var the1stImg = new Image();
+	the1stImg.onload = CreateDelegate(the1stImg, theNewImg_onload);
+	the1stImg.src = $bgimg.attr("src");
+});
+
+function BackgroundLoad($this,imageWidth,imageHeight){
+	$preloader.fadeOut("fast"); //hide preloader
+	FullScreenBackground($this,imageWidth,imageHeight); //scale background image
+	var imageTitle=$("#img_title").data("imageTitle");
+	if(imageTitle){
+		$this.attr("alt", imageTitle).attr("title", imageTitle);
+		$("#img_title").html(imageTitle);
+	} else {
+		$("#img_title").html($this.attr("title"));
+	}
+	$this.fadeIn("slow"); //fadein background image
+}
+
+//mouseover toolbar
+if($toolbar.css("display")!="none"){
+	$toolbar.fadeTo("fast", 0.4);
+}
+$toolbar.hover(
+	function(){ //mouse over
+		var $this=$(this);
+		$this.stop().fadeTo("fast", 1);
+	},
+	function(){ //mouse out
+		var $this=$(this);
+		$this.stop().fadeTo("fast", 0.4);
+	}
+);
+
+//Clicking on thumbnail changes the background image
+$("#outer_container a").click(function(event){
+	event.preventDefault();
+	$bgimg.css("display","none");
+	$preloader.fadeIn("fast"); //show preloader
+	var $this=$(this);
+	var title_attr=$this.children("img").attr("title"); //get image title attribute
+	$("#img_title").data("imageTitle", title_attr); //store image title
+	//get new image dimensions
+	var theNewImg = new Image();
+	theNewImg.onload = CreateDelegate(theNewImg, theNewImg_onload);
+	theNewImg.src = this;
+	$bgimg.attr("src", "").attr("src", this); //change image source
+}); 
+
+//get new image dimensions
+function CreateDelegate(contextObject, delegateMethod){
+	return function(){
+		return delegateMethod.apply(contextObject, arguments);
+	}
+}
+
+//new image on load
+function theNewImg_onload(){
+	$bgimg.data("newImageW",this.width).data("newImageH",this.height);
+	BackgroundLoad($bgimg,this.width,this.height);
+}
+
+//Image scale function
+function FullScreenBackground(theItem,imageWidth,imageHeight){
+	var winWidth=$(window).width();
+	var winHeight=$(window).height();
+	if($toolbar.data("imageViewMode")!="original"){ //scale
+		var picHeight = imageHeight / imageWidth;
+		var picWidth = imageWidth / imageHeight;
+		if($toolbar.data("imageViewMode")=="full"){ //fullscreen size image mode
+			if ((winHeight / winWidth) < picHeight) {
+				$(theItem).attr("width",winWidth);
+				$(theItem).attr("height",picHeight*winWidth);
+			} else {
+				$(theItem).attr("height",winHeight);
+				$(theItem).attr("width",picWidth*winHeight);
+			};
+		} else { //normal size image mode
+			if ((winHeight / winWidth) > picHeight) {
+				$(theItem).attr("width",winWidth);
+				$(theItem).attr("height",picHeight*winWidth);
+			} else {
+				$(theItem).attr("height",winHeight);
+				$(theItem).attr("width",picWidth*winHeight);
+			};
+		}
+		$(theItem).css("margin-left",(winWidth-$(theItem).width())/2);
+		$(theItem).css("margin-top",(winHeight-$(theItem).height())/2);
+	} else { //no scale
+		$(theItem).attr("width",imageWidth);
+		$(theItem).attr("height",imageHeight);
+		$(theItem).css("margin-left",(winWidth-imageWidth)/2);
+		$(theItem).css("margin-top",(winHeight-imageHeight)/2);
+	}
+}
+
+//Image view mode function - fullscreen or normal size
+function ImageViewMode(theMode){
+	$toolbar.data("imageViewMode", theMode);
+	FullScreenBackground($bgimg,$bgimg.data("newImageW"),$bgimg.data("newImageH"));
+	if(theMode=="full"){
+		$toolbar_a.html("<img src='toolbar_n_icon.png' width='50' height='50'  />").attr("onClick", "ImageViewMode('normal');return false").attr("title", "Restore");
+	} else {
+		$toolbar_a.html("<img src='toolbar_fs_icon.png' width='50' height='50'  />").attr("onClick", "ImageViewMode('full');return false").attr("title", "Maximize");
+	}
+}
+</script>    
+
+
+</BOUCLE_contenu_rubrique>

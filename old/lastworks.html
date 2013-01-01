@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Last Works | Jordi Fulla</title>
+	<meta name="Classification" content="art, painting">
+	<META NAME="ROBOTS" CONTENT="ALL">
+	<meta name="Description" content="Jordi Fulla. Artista | Jordi Fulla. Artist.">
+	<meta name="" content="&lt;link rel=" shortcut="" icon="" href="/favicon.ico" type="image/ico">
+	<meta name="Keywords" content="art, artist, painting, video, barcelona, igualada, pintura, contemporary, contemporani, saatchi, barcelona">
+
+
+
+<!-- BEGINNING OF TEMPLATE-RELATED CODE -->
+<link rel="stylesheet" type="text/css" 
+href="templateuser_files/template.css">
+<script type="text/javascript" src="templateuser_files/jquery.js"></script>
+<script type="text/javascript" src="templateuser_files/template.js"></script>
+
+<!-- END OF TEMPLATE-RELATED CODE -->
+<!-- CODI GALERIA -->
+	<link href="galleria/trunk/galleria.css" rel="stylesheet" type="text/css" media="screen">
+	<link href="css/galleria_fulla.css" rel="stylesheet" type="text/css" media="screen">
+	<script type="text/javascript" src="galleria/fulla/jquery.min.js"></script>
+	<script type="text/javascript" src="galleria/trunk/jquery.galleria.js"></script>
+	<script type="text/javascript">
+	
+	$(document).ready(function(){
+		
+		$('.gallery_demo_unstyled').addClass('gallery_demo'); // adds new class name to maintain degradability
+		
+		$('ul.gallery_demo').galleria({
+			history   : true, // activates the history object for bookmarking, back-button etc.
+			clickNext : true, // helper for making the image clickable
+			insert    : '#main_image', // the containing selector for our main image
+			onImage   : function(image,caption,thumb) { // let's add some image effects for demonstration purposes
+				
+				// fade in the image & caption
+				image.css('display','none').fadeIn(1000);
+				caption.css('display','none').fadeIn(1000);
+				
+				// fetch the thumbnail container
+				var _li = thumb.parents('li');
+				
+				// fade out inactive thumbnail
+				_li.siblings().children('img.selected').fadeTo(500,0.5);
+				
+				// fade in active thumbnail
+				thumb.fadeTo('fast',1).addClass('selected');
+				
+				// add a title for the clickable image
+				image.attr('title','Next image >>');
+			},
+			onThumb : function(thumb) { // thumbnail effects goes here
+				
+				// fetch the thumbnail container
+				var _li = thumb.parents('li');
+				
+				// if thumbnail is active, fade all the way.
+				var _fadeTo = _li.is('.active') ? '1' : '0.3';
+				
+				// fade in the thumbnail when finnished loading
+				thumb.css({display:'none',opacity:_fadeTo}).fadeIn(600);
+				
+				// hover effects
+				thumb.hover(
+					function() { thumb.fadeTo('fast',1); },
+					function() { _li.not('.active').children('img').fadeTo('fast',0.3); } // don't fade out if the parent is active
+				)
+			}
+		});
+	});
+	
+	</script>
+</head>
+<body>
+<div id="firma" class="pagewrapper templatepagewrapper">
+<div class="content templatecontent">
+<div class="demo">
+<p class="navega"><span class="project_title" >On Time</span><a style="text-decoration:underline; " href="#" onclick="$.galleria.prev(); return false;">&laquo; Previous</a> | <a style="text-decoration:underline; " href="#" onclick="$.galleria.next(); return false;">Next &raquo;</a></p>
+
+<div id="main_image"></div>
+<ul class="gallery_demo_unstyled">
+    <li class="active"><img src="img/lastworks/CAT_671.jpg" title="Cat 671. 42x60 cm. Graphite on paper. 2010"></li>
+    <li><img src="img/lastworks/CAT_672.jpg" title="Cat 672. 42x60 cm. Graphite on paper. 2010" ></li>
+    <li><img src="img/lastworks/CAT_673.jpg" title="Cat 673. 42x60 cm. Graphite and acrylic on paper. 2010" ></li>
+    <li><img src="img/lastworks/CAT_674.jpg" title="Cat 674. 42x60 cm. Graphite on paper. 2010" ></li>
+    <li><img src="img/lastworks/CAT_676.jpg" title="Cat 676. Sommet. 89x79 cm. Acrylic on canvas. 2010"></li>
+    <li><img src="img/lastworks/CAT_679.jpg" title="Cat 679. 42x60 cm. Graphite and acrylic on paper. 2010" ></li>
+    <li><img src="img/lastworks/CAT_681.jpg" title="Cat 681. Le b&acirc;tisseur qui chatouille. 42x60 cm. Acrylic | Paper on wood. 2010"  ></li>
+    <li><img src="img/lastworks/CAT_682.jpg"  title="Cat 682. Le b&acirc;tisseur qui chatouille II. 42x60 cm. Acrylic | Paper on wood. 2010"   ></li>
+    <li><img src="img/lastworks/CAT_683.jpg" title="Cat 683. 42x60 cm. Graphite on paper. 2010"  ></li>
+    <li><img src="img/lastworks/CAT_684.jpg" title="Cat 684.  42x60 cm. Graphite on paper. 2010" ></li>
+    <li><img src="img/lastworks/CAT_686.jpg" title="Cat 686. Maison survolant. 71x89 cm. Acrylic on paper. 2010" ></li>
+    <li><img src="img/lastworks/CAT_687.jpg" title="Cat 687. Le b&acirc;tisseur qui chatouille III. 42x60 cm. Acrylic | Paper on wood. 2010" ></li>
+    <li><img src="img/lastworks/CAT_688.jpg" title="Cat 687. Le b&acirc;tisseur qui chatouille IV. 42x60 cm. Acrylic | Paper on wood. 2010"  ></li>
+    <li><img src="img/lastworks/CAT_638.jpg" title="&nbsp;"  ></li>
+    <li><img src="img/lastworks/CAT_641.jpg" title="&nbsp;"  ></li>
+    <li><img src="img/lastworks/CAT_645.jpg" title="&nbsp;"  ></li>
+    <li><img src="img/lastworks/CAT_646.jpg" title="&nbsp;"  ></li>
+    <li><img src="img/lastworks/CAT_648.jpg" title="&nbsp;"  ></li>
+    <li><img src="img/lastworks/CAT_655.jpg" title="&nbsp;"  ></li>
+    <li><img src="img/lastworks/3b001b9.jpg" title="CAT 698. 92x100 cm. Acrilyc on canvas. 2010"  ></li>
+    <li><img src="img/lastworks/4b22b5b.jpg" title="CAT 481. 100x100 cm. Acrilyc on canvas.  2005/2010"  ></li>
+   <li><img src="img/lastworks/6776d87.jpg" title="CAT 695. 92x100 cm. Acrilyc on canvas. 2010"  ></li>
+    <li><img src="img/lastworks/b421b0a.jpg" title="CAT 694. 100x100 cm. Acrilyc on canvas.  2010"  ></li>
+    <li><img src="img/lastworks/bf2b7fa.jpg" title="CAT 696. 100x100 cm. Acrilyc on canvas.  2010"  ></li>
+   <li><img src="img/lastworks/ddaaba9.jpg" title="CAT 697. 92x100 cm. Acrilyc on canvas. 2010"  ></li>
+    <li><img src="img/lastworks/f6b620f.jpg" title="CAT 693. 92x100 cm. Acrilyc on canvas. 2010"  ></li>
+	
+</ul>
+
+</div></div>
+</div>
+</body></html>

@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Contact | Jordi Fulla</title>
+<!-- BEGINNING OF TEMPLATE-RELATED CODE -->
+<link rel="stylesheet" type="text/css" 
+href="templateuser_files/template.css">
+<script type="text/javascript" src="templateuser_files/jquery.js"></script>
+<script type="text/javascript" src="templateuser_files/template.js"></script>
+
+<!-- END OF TEMPLATE-RELATED CODE -->
+<!-- CODI GALERIA -->
+	<link href="galleria/trunk/galleria.css" rel="stylesheet" type="text/css" media="screen">
+	<script type="text/javascript" src="galleria/fulla/jquery.min.js"></script>
+	<script type="text/javascript" src="galleria/trunk/jquery.galleria.js"></script>
+	<script type="text/javascript">
+	
+	$(document).ready(function(){
+		
+		$('.gallery_demo_unstyled').addClass('gallery_demo'); // adds new class name to maintain degradability
+		
+		$('ul.gallery_demo').galleria({
+			history   : true, // activates the history object for bookmarking, back-button etc.
+			clickNext : true, // helper for making the image clickable
+			insert    : '#main_image', // the containing selector for our main image
+			onImage   : function(image,caption,thumb) { // let's add some image effects for demonstration purposes
+				
+				// fade in the image & caption
+				image.css('display','none').fadeIn(1000);
+				caption.css('display','none').fadeIn(1000);
+				
+				// fetch the thumbnail container
+				var _li = thumb.parents('li');
+				
+				// fade out inactive thumbnail
+				_li.siblings().children('img.selected').fadeTo(500,0.5);
+				
+				// fade in active thumbnail
+				thumb.fadeTo('fast',1).addClass('selected');
+				
+				// add a title for the clickable image
+				image.attr('title','Next image >>');
+			},
+			onThumb : function(thumb) { // thumbnail effects goes here
+				
+				// fetch the thumbnail container
+				var _li = thumb.parents('li');
+				
+				// if thumbnail is active, fade all the way.
+				var _fadeTo = _li.is('.active') ? '1' : '0.3';
+				
+				// fade in the thumbnail when finnished loading
+				thumb.css({display:'none',opacity:_fadeTo}).fadeIn(600);
+				
+				// hover effects
+				thumb.hover(
+					function() { thumb.fadeTo('fast',1); },
+					function() { _li.not('.active').children('img').fadeTo('fast',0.3); } // don't fade out if the parent is active
+				)
+			}
+		});
+	});
+	
+	</script>
+	<style media="screen,projection" type="text/css">
+	
+	/* BEGIN DEMO STYLE */
+	*{margin:0;padding:0}
+	body{ overflow:hidden;}
+	h1,h2{}
+	a{text-decoration:none; color:#000; font-size:11px; padding:2px 3px 3px 3px;}
+	a:hover{color:#67a;}
+	.caption{font-style:italic;color:#887;}
+.demo{position:relative;
+	margin-top:110px;
+	margin-left: 0px;
+	border-top-color: #333333;
+	border-top-style: double;
+	border-top-width: thin;
+	max-width:90%;
+	overflow: auto;}	.gallery_demo{width:702px;margin:0 auto;}
+	.gallery_demo li{width:68px;height:50px;border:none; background-color:#999999;}
+	.gallery_demo li div{left:240px}
+	.gallery_demo li div .caption{font:italic 0.7em/1.4 georgia,serif;}
+	
+	#main_image{margin:0 auto 60px auto;}
+	#main_image img{margin-bottom:10px;}
+	
+	.navega{text-decoration:none; color:#000; font-size:12px; padding:5px 3px 3px 5px; margin-bottom:5px;}
+	
+                * { margin: 0; padding: 0; }
+                
+                html { 
+				
+                        background: url(img/bck_contact.png) no-repeat center center fixed; 
+                        -webkit-background-size: cover;
+                        -moz-background-size: cover;
+                        -o-background-size: cover;
+                        background-size: cover;
+                }
+	
+    </style>
+
+</head>
+<body>
+<div id="firma" class="pagewrapper templatepagewrapper">
+<div class="content templatecontent">
+<div class="demo">
+ 
+	  <div id="rellotgegran">	<p class="rellotgegran" style="color:#000; font-weight: bold;">Atelier Jordi Fulla</p>
+</div>
+								<p class="rellotgegran"><span class="rellotgegran">Barcelona</br> Spain<br />
+		    info@jordifulla.com<br />
+		    0034 655 109 537</p>
+	</div></div>
+</div>
+</body></html>

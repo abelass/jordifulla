@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jpn | Jordi Fulla</title>
+	<meta name="Classification" content="art, painting">
+	<META NAME="ROBOTS" CONTENT="ALL">
+	<meta name="Description" content="Jordi Fulla. Artista | Jordi Fulla. Artist.">
+	<meta name="Keywords" content="art, japan, jpn, artist, painting, video, barcelona, igualada, pintura, contemporary, contemporani, saatchi, barcelona">
+
+<!-- BEGINNING OF TEMPLATE-RELATED CODE -->
+<link rel="stylesheet" type="text/css" 
+href="templateuser_files/template.css">
+<script type="text/javascript" src="templateuser_files/jquery.js"></script>
+<script type="text/javascript" src="templateuser_files/template.js"></script>
+
+<!-- END OF TEMPLATE-RELATED CODE -->
+<!-- CODI GALERIA -->
+	<link href="galleria/trunk/galleria.css" rel="stylesheet" type="text/css" media="screen">
+	<link href="css/galleria_fulla.css" rel="stylesheet" type="text/css" media="screen">
+	<script type="text/javascript" src="galleria/fulla/jquery.min.js"></script>
+	<script type="text/javascript" src="galleria/trunk/jquery.galleria.js"></script>
+	<script type="text/javascript">
+	
+	$(document).ready(function(){
+		
+		$('.gallery_demo_unstyled').addClass('gallery_demo'); // adds new class name to maintain degradability
+		
+		$('ul.gallery_demo').galleria({
+			history   : true, // activates the history object for bookmarking, back-button etc.
+			clickNext : true, // helper for making the image clickable
+			insert    : '#main_image', // the containing selector for our main image
+			onImage   : function(image,caption,thumb) { // let's add some image effects for demonstration purposes
+				
+				// fade in the image & caption
+				image.css('display','none').fadeIn(1000);
+				caption.css('display','none').fadeIn(1000);
+				
+				// fetch the thumbnail container
+				var _li = thumb.parents('li');
+				
+				// fade out inactive thumbnail
+				_li.siblings().children('img.selected').fadeTo(500,0.5);
+				
+				// fade in active thumbnail
+				thumb.fadeTo('fast',1).addClass('selected');
+				
+				// add a title for the clickable image
+				image.attr('title','Next image >>');
+			},
+			onThumb : function(thumb) { // thumbnail effects goes here
+				
+				// fetch the thumbnail container
+				var _li = thumb.parents('li');
+				
+				// if thumbnail is active, fade all the way.
+				var _fadeTo = _li.is('.active') ? '1' : '0.3';
+				
+				// fade in the thumbnail when finnished loading
+				thumb.css({display:'none',opacity:_fadeTo}).fadeIn(600);
+				
+				// hover effects
+				thumb.hover(
+					function() { thumb.fadeTo('fast',1); },
+					function() { _li.not('.active').children('img').fadeTo('fast',0.3); } // don't fade out if the parent is active
+				)
+			}
+		});
+	});
+	
+	</script>
+</head>
+<body>
+<div id="firma" class="pagewrapper templatepagewrapper">
+<div class="content templatecontent">
+<div class="demo">
+<p class="navega"><span class="project_title" >JPN</span><a style="text-decoration:underline; " href="#" onclick="$.galleria.prev(); return false;">&laquo; Previous</a> | <a style="text-decoration:underline; " href="#" onclick="$.galleria.next(); return false;">Next &raquo;</a></p>
+
+<div id="main_image"></div>
+<ul class="gallery_demo_unstyled">
+    <li class="active"><img src="img/jpn/jordi_fulla_CAT_445.jpg"></li>
+    <li><img src="img/jpn/jordi_fulla_CAT_455.jpg" ></li>
+    <li><img src="img/jpn/jordi_fulla_CAT_467.jpg" ></li>
+    <li><img src="img/jpn/jordi_fulla_CAT_510.jpg" ></li>
+    <li><img src="img/jpn/jordi_fulla_CAT_525.jpg" ></li>
+    <li><img src="img/jpn/jordi_fulla_CAT_543a.jpg" ></li>
+    <li><img src="img/jpn/jordi_fulla_CAT_552.jpg" ></li>
+    <li><img src="img/jpn/jordi_fulla_CAT_553.jpg" ></li>
+    <li><img src="img/jpn/jordi_fulla_CAT_556.jpg" ></li>
+    <li><img src="img/jpn/jordi_fulla_CAT_585.jpg" ></li>
+    <li><img src="img/jpn/jordi_fulla_CAT_594a.jpg" ></li>
+    <li><img src="img/jpn/jordi_fulla_CAT_611.jpg" ></li>
+    <li><img src="img/jpn/jordi_fulla_CAT_615.jpg" ></li>
+    <li><img src="img/jpn/jordi_fulla_CAT_618.jpg" ></li>
+    <li><img src="img/jpn/jordi_fulla_CAT_647.jpg" ></li>
+    <li><img src="img/jpn/jordi_fulla_CAT_650.jpg" ></li>
+    <li><img src="img/jpn/jordi_fulla_CAT_651.jpg" ></li>
+    <li><img src="img/jpn/jordi_fulla_CAT_652.jpg" ></li>
+	
+</ul>
+
+</div></div>
+</div>
+</body></html>

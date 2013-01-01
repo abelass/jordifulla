@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Reflet Suspendu | Jordi Fulla</title>
+<!-- BEGINNING OF TEMPLATE-RELATED CODE -->
+<link rel="stylesheet" type="text/css" 
+href="templateuser_files/template.css">
+<script type="text/javascript" src="templateuser_files/jquery.js"></script>
+<script type="text/javascript" src="templateuser_files/template.js"></script>
+
+<!-- END OF TEMPLATE-RELATED CODE -->
+<!-- CODI GALERIA -->
+	<link href="galleria/trunk/galleria.css" rel="stylesheet" type="text/css" media="screen">
+	<link href="css/galleria_fulla.css" rel="stylesheet" type="text/css" media="screen">
+	<script type="text/javascript" src="galleria/fulla/jquery.min.js"></script>
+	<script type="text/javascript" src="galleria/trunk/jquery.galleria.js"></script>
+	<script type="text/javascript">
+	
+	$(document).ready(function(){
+		
+		$('.gallery_demo_unstyled').addClass('gallery_demo'); // adds new class name to maintain degradability
+		
+		$('ul.gallery_demo').galleria({
+			history   : true, // activates the history object for bookmarking, back-button etc.
+			clickNext : true, // helper for making the image clickable
+			insert    : '#main_image', // the containing selector for our main image
+			onImage   : function(image,caption,thumb) { // let's add some image effects for demonstration purposes
+				
+				// fade in the image & caption
+				image.css('display','none').fadeIn(1000);
+				caption.css('display','none').fadeIn(1000);
+				
+				// fetch the thumbnail container
+				var _li = thumb.parents('li');
+				
+				// fade out inactive thumbnail
+				_li.siblings().children('img.selected').fadeTo(500,0.5);
+				
+				// fade in active thumbnail
+				thumb.fadeTo('fast',1).addClass('selected');
+				
+				// add a title for the clickable image
+				image.attr('title','Next image >>');
+			},
+			onThumb : function(thumb) { // thumbnail effects goes here
+				
+				// fetch the thumbnail container
+				var _li = thumb.parents('li');
+				
+				// if thumbnail is active, fade all the way.
+				var _fadeTo = _li.is('.active') ? '1' : '0.3';
+				
+				// fade in the thumbnail when finnished loading
+				thumb.css({display:'none',opacity:_fadeTo}).fadeIn(600);
+				
+				// hover effects
+				thumb.hover(
+					function() { thumb.fadeTo('fast',1); },
+					function() { _li.not('.active').children('img').fadeTo('fast',0.3); } // don't fade out if the parent is active
+				)
+			}
+		});
+	});
+	
+	</script>
+</head>
+<body>
+<div id="firma" class="pagewrapper templatepagewrapper">
+<div class="content templatecontent">
+<div class="demo">
+<p class="navega"><span class="project_title" >Reflet Suspendu</span><a style="text-decoration:underline; " href="#" onclick="$.galleria.prev(); return false;">&laquo; Previous</a> | <a style="text-decoration:underline; " href="#" onclick="$.galleria.next(); return false;">Next &raquo;</a></p>
+
+<div id="main_image"></div>
+<ul class="gallery_demo_unstyled">
+    <li class="active"><img src="img/reflet/jordi_fulla_CAT_450.jpg"></li>
+    <li><img src="img/reflet/jordi_fulla_CAT_387.jpg"></li>
+    <li><img src="img/reflet/jordi_fulla_CAT_444.jpg"></li>
+    <li><img src="img/reflet/jordi_fulla_CAT_451.jpg"></li>
+    <li><img src="img/reflet/jordi_fulla_CAT_453.jpg"></li>
+    <li><img src="img/reflet/jordi_fulla_CAT_492.jpg"></li>
+    <li><img src="img/reflet/jordi_fulla_CAT_498.jpg"></li>
+    <li><img src="img/reflet/jordi_fulla_CAT_508.jpg"></li>
+    <li><img src="img/reflet/jordi_fulla_CAT_518.jpg"></li>
+    <li><img src="img/reflet/jordi_fulla_CAT_520.jpg"></li>
+    <li><img src="img/reflet/jordi_fulla_CAT_521.jpg"></li>
+    <li><img src="img/reflet/jordi_fulla_CAT_522.jpg"></li>
+    <li><img src="img/reflet/jordi_fulla_CAT_523.jpg"></li>
+    <li><img src="img/reflet/jordi_fulla_CAT_524.jpg"></li>
+    <li><img src="img/reflet/jordi_fulla_CAT_527.jpg"></li>
+    <li><img src="img/reflet/jordi_fulla_CAT_528.jpg"></li>
+    <li><img src="img/reflet/jordi_fulla_CAT_531.jpg"></li>
+    <li><img src="img/reflet/jordi_fulla_CAT_537.jpg"></li>
+    <li><img src="img/reflet/jordi_fulla_CAT_588.jpg"></li>
+	</ul>
+</div></div>
+</div>
+</body></html>

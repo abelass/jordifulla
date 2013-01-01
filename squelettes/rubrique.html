@@ -1,0 +1,5 @@
+<BOUCLE_principale_rubrique(RUBRIQUES){id_rubrique}{tout}>
+[(#ID_RUBRIQUE|=={1}|non)<INCLURE{fond=structure,env,id_secteur=#ID_SECTEUR,type-page=rubrique,composition=#COMPOSITION} />]
+
+[(#ID_RUBRIQUE|=={1}|oui)<INCLURE{fond=sommaire,env,id_secteur=#ID_SECTEUR,type-page=rubrique,composition=#COMPOSITION} />]
+</BOUCLE_principale_rubrique>

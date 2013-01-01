@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Publications | Jordi Fulla</title>
+	<meta name="Classification" content="art, painting">
+	<META NAME="ROBOTS" CONTENT="ALL">
+	<meta name="Description" content="Jordi Fulla. Artista | Jordi Fulla. Artist.">
+	<meta name="" content="&lt;link rel=" shortcut="" icon="" href="/favicon.ico" type="image/ico">
+	<meta name="Keywords" content="art, artist, painting, video, barcelona, igualada, pintura, contemporary, contemporani, saatchi, barcelona">
+<!-- BEGINNING OF TEMPLATE-RELATED CODE -->
+<link rel="stylesheet" type="text/css" 
+href="templateuser_files/template.css">
+<script type="text/javascript" src="templateuser_files/jquery.js"></script>
+<script type="text/javascript" src="templateuser_files/template.js"></script>
+
+<!-- END OF TEMPLATE-RELATED CODE -->
+<!-- CODI GALERIA -->
+	<link href="galleria/trunk/galleria.css" rel="stylesheet" type="text/css" media="screen">
+	<script type="text/javascript" src="galleria/fulla/jquery.min.js"></script>
+	<script type="text/javascript" src="galleria/trunk/jquery.galleria.js"></script>
+	<script type="text/javascript">
+	
+	$(document).ready(function(){
+		
+		$('.gallery_demo_unstyled').addClass('gallery_demo'); // adds new class name to maintain degradability
+		
+		$('ul.gallery_demo').galleria({
+			history   : true, // activates the history object for bookmarking, back-button etc.
+			clickNext : true, // helper for making the image clickable
+			insert    : '#main_image', // the containing selector for our main image
+			onImage   : function(image,caption,thumb) { // let's add some image effects for demonstration purposes
+				
+				// fade in the image & caption
+				image.css('display','none').fadeIn(1000);
+				caption.css('display','none').fadeIn(1000);
+				
+				// fetch the thumbnail container
+				var _li = thumb.parents('li');
+				
+				// fade out inactive thumbnail
+				_li.siblings().children('img.selected').fadeTo(500,0.5);
+				
+				// fade in active thumbnail
+				thumb.fadeTo('fast',1).addClass('selected');
+				
+				// add a title for the clickable image
+				image.attr('title','Next image >>');
+			},
+			onThumb : function(thumb) { // thumbnail effects goes here
+				
+				// fetch the thumbnail container
+				var _li = thumb.parents('li');
+				
+				// if thumbnail is active, fade all the way.
+				var _fadeTo = _li.is('.active') ? '1' : '0.3';
+				
+				// fade in the thumbnail when finnished loading
+				thumb.css({display:'none',opacity:_fadeTo}).fadeIn(600);
+				
+				// hover effects
+				thumb.hover(
+					function() { thumb.fadeTo('fast',1); },
+					function() { _li.not('.active').children('img').fadeTo('fast',0.3); } // don't fade out if the parent is active
+				)
+			}
+		});
+	});
+	
+	</script>
+	<style media="screen,projection" type="text/css">
+	
+	/* BEGIN DEMO STYLE */
+	*{margin:0;padding:0}
+	body{}
+	h1,h2{}
+	a{text-decoration:none; color:#000; font-size:12px; padding:2px 3px 3px 3px;}
+	a:hover{
+	color:#003333;
+	text-decoration: underline;
+}
+	.caption{font-style:italic;color:#333333;}
+	.demo{position:relative; margin-top:10px;}
+	.gallery_demo{width:702px;margin:0 auto;}
+	.gallery_demo li{width:68px;height:50px;border:none; background-color:#999999;}
+	.gallery_demo li div{left:240px}
+	.gallery_demo li div .caption{font:italic 0.7em/1.4 georgia,serif;}
+	
+	#main_image{margin:0 auto 60px auto;}
+	#main_image img{margin-bottom:10px;}
+	
+	.navega{text-decoration:none; color:#000; font-size:12px; padding:5px 3px 3px 5px; margin-bottom:5px;}
+	
+
+	
+    </style>
+
+</head>
+<body>
+<div id="firma" class="pagewrapper templatepagewrapper">
+<div class="content templatecontent">
+<div class="demo">
+			<p class="navega"><span class="project_title" style="margin-left:-5px; " ><strong>Catalogs</strong></span></p>
+				
+		
+				
+<div style="float:left; width:400px; height:auto; margin-top:10px;">
+								
+						<p class="publications">
+						<img src="img/publications/exemplaire.png" alt="Seasons" width="186" height="263" border="0" />
+						</p>
+						<p class="publications"><strong>“Exemplaire de consultation”</strong>, 2008</p>
+						
+						<p class="publications">&mdash;</p>
+						
+						<p class="publications"><a href="img/publications/lamaisondeboissurlille.pdf" target="_blank">
+						<img src="img/publications/lamaisonsur.png" alt="La maison de Bois sur l'ille" border="0" />
+						</a></p>
+						<p class="popup_title"><a href="img/publications/lamaisondeboissurlille.pdf">La Maison de bois sur l'&icirc;le. 2007.</a></p>
+						
+						<p class="publications">&mdash;</p>
+						
+						<p class="publications">
+						<img src="img/publications/seasons.png" alt="Seasons" width="187" height="263" border="0" />
+						</p>
+						<p class="publications"><strong>“Seasons”</strong>, 2005</p>
+
+						<p class="publications">&mdash;</p>
+
+						<p class="publications"><a href="img/publications/fulla_jf_9705.pdf" target="_blank">
+						<img src="img/publications/jf9705.png" alt="jf 9705" width="236" height="263" border="0" />
+						</a></p>
+						<p class="popup_title"><a href="img/publications/lamaisondeboissurlille.pdf">"JF / 9705" 2005.</a></p>						
+
+						<p class="publications">&mdash;</p>
+
+						<p class="publications">
+						<img src="img/publications/lastexit.png" alt="Last exit" width="291" height="263" border="0" />
+						</p>
+						<p class="publications"><strong>“Last Exit”</strong>, 2004</p>
+
+						<p class="publications">&mdash;</p>
+
+						<p class="publications">
+						<img src="img/publications/eau2.png" alt="Eau 2" width="228" height="263" border="0" />
+						</p>
+						<p class="publications"><strong>“Eau! 2”</strong>, 2003</p>
+
+						<p class="publications">&mdash;</p>
+
+						<p class="publications">
+						<img src="img/publications/eau.jpg" alt="Eau" width="200" height="263" border="0" />
+						</p>
+						<p class="publications"><strong>“Eau!”</strong>, 2003</p>
+
+						<p class="publications">&mdash;</p>
+						
+						<p class="publications">
+						<img src="img/publications/atmosferaanonima.png" alt="Atmosfera anonima" width="229" height="263" border="0" />
+						</p>
+						<p class="publications"><strong>“L’atmosfera anónima”</strong>, 2001	</p>
+
+						<p class="publications">&mdash;</p>
+
+						<p class="publications">
+						<img src="img/publications/prochaine.png" alt="Prochaine sortie: Nulle Part" width="229" height="263" border="0" />
+						</p>
+						<p class="publications"><strong>“Prochaine sortie: Nulle part”</strong>, 1999</p>
+
+						<p class="publications">&mdash;</p>
+
+						<p class="publications">
+						<img src="img/publications/veuenoff.png" alt="Une chambre pour un Seul aveugle" width="226" height="263" border="0" />
+						</p>
+						<p class="publications"><strong>“Veu en off”</strong>, 1998</p>
+
+						<p class="publications">&mdash;</p>
+
+						<p class="publications">
+						<img src="img/publications/unachambrepourunseul.png" alt="Une chambre pour un Seul aveugle" width="210" height="263" border="0" />
+						</p>
+						<p class="publications"><strong>“Une chambre pour un Seul aveugle”</strong>, 1993</p> 
+
+						<p class="publications">&mdash;</p>
+
+						<p class="publications">
+						<img src="img/publications/arran.png" alt="Arran 1991" border="0" />
+						</p>
+						<p class="publications"><strong>“ArrAn”</strong>, 1991</p>		
+					
+		</p>
+</div>
+
+
+
+
+</div></div>
+</div>
+</body></html>
