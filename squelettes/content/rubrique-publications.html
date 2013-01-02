@@ -8,20 +8,24 @@
     </div>
     <div style="float:left; width:90%; background-color:#FFF; height:auto; margin-top:10px; z-index: 990000;">     
     <BOUCLE_docs(DOCUMENTS){id_rubrique}{extension IN png,jpg,gif,pdf}{!par date}>
-        #SET{link,''} 
-        [(#SET{logo,''})]               
+        [(#EXTENSION|=={pdf}|?{
+              #SET{logo,#LOGO_DOCUMENT}
+            ,
+             #SET{logo,#FICHIER}
+            })]
+           
         <div class="publications">
-            <p>
+            <div class="image">
                    
                <a href="[(#URL_PAGE{publication_detail}|parametre_url{id_document,#ID_DOCUMENT})]" class="mediabox"> 
-               [(#LOGO_DOCUMENT|sinon{#FICHIER}|image_reduire{200,200}|inserer_attribut{alt,#TITRE})]
+               [(#GET{logo}|image_reduire{250,250}|inserer_attribut{alt,#TITRE})]
                </a>
-            </p>
-            <p class="title">
+           </div>
+            <div class="title">
                 <a href="[(#URL_PAGE{publication_detail}|parametre_url{id_document,#ID_DOCUMENT})]" class="mediabox"> 
                 <strong>“#TITRE”</strong>, [(#DATE|affdate{Y})]
                 </a>
-            </p>
+            </div>
         </div>
     </BOUCLE_docs>
     </div>
