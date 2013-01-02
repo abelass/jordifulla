@@ -1,0 +1,30 @@
+<BOUCLE_contenu_rubrique(RUBRIQUES){id_rubrique}{tout}>
+    <div class="demo">
+        <div class="#EDIT{texte}">
+            #TEXTE
+        </div>
+    </div>
+    
+    [<div class="notes"><h2 class="h2"><:info_notes:></h2>(#NOTES)</div>]
+
+        <B_docs>
+        [<p class="pagination">(#PAGINATION)</p>]
+        <ul class="liste liste-evenements">     
+        <BOUCLE_docs(DOCUMENTS){id_rubrique}{!par date}{pagination}>
+       <li class="item menu-entree">
+           <div class="date">
+               [(#DATE|affdate{d/m/Y})]
+           </div> 
+           <div class="descr">
+               <div class="titre #EDIT{titre}">#TITRE</div>
+               [<div class="descriptif #EDIT{descriptif}">(#DESCRIPTIF)</div>]        
+               <a target="_blank" href="#URL_DOCUMENT" [ title="(#TITRE|attribut_html|couper{80})"]>
+                    <small>[download]</small>    
+               </a>     
+            </div>
+        </li>
+        </BOUCLE_docs>
+        </ul>   
+        </B_docs>
+
+</BOUCLE_contenu_rubrique>

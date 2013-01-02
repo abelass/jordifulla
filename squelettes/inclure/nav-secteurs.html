@@ -1,3 +1,4 @@
+#SET{date,#DATE}
 <div class="headerwrapper templateheader">
 	<div class="templateheader">
 		<a href="#URL_SITE_SPIP">#LOGO_SITE_SPIP</a>
@@ -8,7 +9,7 @@
 <B_rubriques>
 
 		<ul style="margin-top:5px; ">
-		 <BOUCLE_rubriques(RUBRIQUES) {id_rubrique !IN 1,4,16}{racine}{tout} {par num titre, titre}>
+		 <BOUCLE_rubriques(RUBRIQUES) {id_rubrique !IN 1,4,16}{composition!=prensa}{racine}{tout} {par num titre, titre}>
 			 <li[ class="(#EXPOSE)"]>
 				<a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a>
 			</li>
@@ -21,11 +22,24 @@
 
 </B_rubriques>
 		<ul style="margin-top:5px; margin-left:75px; ">
-<BOUCLE_rub_others(RUBRIQUES) {id_rubrique IN 4,16}{racine}{tout}  {par num titre, titre}>
+<BOUCLE_rub_others(RUBRIQUES) {id_rubrique IN 16,21}{racine}{tout}  {par num titre, titre}>
 			<li class="item menu-entree[ (#EXPOSE)]"><a style="color:#333333; font-weight:bolder; " href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a></li>
-</BOUCLE_rub_others>	
-			<li><a style="color:#003333;">&nbsp;</a></li>
-			<li><a style="color:#003333;">&nbsp;</a></li>
-		</ul>	 
+</BOUCLE_rub_others>
+  		
+		</ul>
+
+<ul style="margin-top:5px; margin-left:2.5em">		
+<BOUCLE_agenda(ARTICLES){id_article=8}>
+    <li class="item menu-entree[ (#EXPOSE)]">
+    <a style="color:#003333; font-weight:bolder;" href="#URL_ARTICLE">#TITRE</a>
+    </li>
+</BOUCLE_agenda> 
+<BOUCLE_prensa(RUBRIQUES){id_rubrique=4} {tout}>
+    <li class="item menu-entree[ (#EXPOSE)]">
+    <a style="color:#003333; font-weight:bolder;" href="#URL_RUBRIQUE">#TITRE</a>
+    </li
+</BOUCLE_prensa>
+</ul>   
+	 
 	 </div>
   </div> 
