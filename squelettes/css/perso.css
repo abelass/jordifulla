@@ -95,10 +95,32 @@ position:relative;
 
 #container{position:relative}
 
-#documents_galerie{float}
 
 .spip_logos{float:none}
 
 .demo p, .demo a{font-size:40px;line-height:normal}
 
 .navega a, p.navega {font-size:12px}
+
+.liste-evenements {margin-top:10px}
+
+.liste-evenements li,.liste-evenements li p ,.liste-evenements li a    {font-size: 18px;
+    line-height: normal;clear:both}
+.liste-evenements li .date,  .liste-evenements li .descr  {float:left}
+
+.liste-evenements li .date{width:30%}
+.liste-evenements li .descr{width:70%}
+
+.liste-evenements li .gallery_demo_unstyled {
+    margin-left: 0;
+}
+.liste-evenements li .gallery_demo li {
+    background-color: transparent;
+    border: medium none;
+    height: auto;
+    width: auto;
+    margin: 0 10px 10px 0;
+    opacity: 1;
+}
+
+.descr p {margin-bottom:0.2em}

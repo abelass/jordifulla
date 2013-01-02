@@ -121,7 +121,6 @@ border:none;
 	border-top-style: double;
 	border-top-width: thin;
 	max-width:90%;
-	overflow: auto;
 }
 
 .headerwrapper  {}
@@ -178,7 +177,7 @@ text-align: left;
 .publications {
 	float:left;
 	font-family: courier, monospace, helvetica, arial, sans;
-	width:200px;
+	width:250px;
 	background-color:#FFF;
 	font-size:12px;
 	color: #000;
@@ -188,13 +187,17 @@ text-align: left;
 	margin-right: 10px;
 	height: 310px;
 	margin-bottom: 10px;
+	text-align:center;
 }
 .publications img {
 	float:left;
 	margin-bottom: 10px;
+	
 }
+.publications .image{height:260px;}
+.publications .title{width:250px;clear:both}
 
-.publications .title{vertical-align:bottom;width:200px;clear:both}
+#cboxContent .publications{text-align:left;}
 .menu_horitzontal {height:55px; width:100%;	text-decoration: none;}
 .menu_horitzontal a{	background-color: #FFFFFF;	text-decoration: none;}
 .menu_horitzontal a:link{
