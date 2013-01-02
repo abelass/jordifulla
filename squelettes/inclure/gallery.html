@@ -2,18 +2,20 @@
 
 </p>
 
-<BOUCLE_afficher_document(DOCUMENTS) {id_document ?}{id_rubrique}{extension IN png,jpg,gif}{0,1}>
-	[<div class="main_image" id="main_image"><a type="#MIME_TYPE" href="#URL_DOCUMENT">(#FICHIER|image_reduire{500,*})</a></div>]
-	#SET{titre,#TITRE}
-	#SET{descriptif,#DESCRIPTIF}
+<BOUCLE_afficher_document(DOCUMENTS) {id_document ?}{id_rubrique}{extension IN png,jpg,gif}{par num titre, date}{0,1}>
+	[<div class="main_image" id="main_image">
+	    <div class="galleria_wrapper">
+	    <a type="#MIME_TYPE" href="#URL_DOCUMENT" title="[(#TITRE|textebrut)]">(#FICHIER|image_reduire{500,*})
+	        </a></div>
+	[<span class="caption">(#TITRE)</span>]	    
+	</div>]
+
 </BOUCLE_afficher_document>
 
 <B_documents_portfolio>
 <div class="bloc clearfix" id="documents_galerie">
 	<ul class="gallery_demo_unstyled gallery_demo">
 		<BOUCLE_documents_portfolio(DOCUMENTS) {id_article ?} {id_rubrique ?} {id_evenement ?}{mode ?}{extension IN png,jpg,gif} {par num titre, date}{doublons}{tout}>
-		[(#COMPTEUR_BOUCLE|!={#TOTAL_BOUCLE}|?{#SET{next,#COMPTEUR_BOUCLE},''})]
-		[(#COMPTEUR_BOUCLE|moins{1}|>{0}|?{[(#SET{previous,#COMPTEUR_BOUCLE|moins{1}})],''})]
 		<li[ class="(#EXPOSE)"]><a class="ajax" href="[(#SELF|parametre_url{id_document,#ID_DOCUMENT})]" [ title="(#TITRE|attribut_html|couper{80})"]>[(#FICHIER
 			|image_passe_partout{67,49}
 			|image_recadre{67,49}
@@ -24,8 +26,5 @@
 </div><!--#documents_portfolio-->
 </B_documents_portfolio>
 
-[(#REM)
-	Afficher en grand le document demande dans l'URL
-]
 
 <br/ class="nettoyeur">
