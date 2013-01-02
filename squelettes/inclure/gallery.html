@@ -1,13 +1,5 @@
 <p class="navega"><span class="project_title" >#TITRE</span>
 
-<BOUCLE_current_doc(DOCUMENTS) {id_document ?}{id_rubrique}{extension IN png,jpg,gif}{0,1}{par id_document}>
-    <BOUCLE_doc_prev(DOCUMENTS){id_document<#ID_DOCUMENT}{id_rubrique}{extension IN png,jpg,gif}{0,1}{!par id_document}>
-    <a class="ajax" style="text-decoration:underline; " href="[(#SELF|parametre_url{id_document,#ID_DOCUMENT})]">&laquo; Previous</a>
-    </BOUCLE_doc_prev> |
-    <BOUCLE_doc_next(DOCUMENTS){id_document>#ID_DOCUMENT}{id_rubrique}{extension IN png,jpg,gif}{0,1}{par id_document}>
-    <a class="ajax" style="text-decoration:underline;" href="[(#SELF|parametre_url{id_document,#ID_DOCUMENT})]">Next &raquo;</a>
-    </BOUCLE_doc_next>    
-</BOUCLE_current_doc>
 </p>
 
 <BOUCLE_afficher_document(DOCUMENTS) {id_document ?}{id_rubrique}{extension IN png,jpg,gif}{0,1}>
