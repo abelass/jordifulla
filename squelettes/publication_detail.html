@@ -1,0 +1,17 @@
+    <BOUCLE_docs(DOCUMENTS){id_document}{tout}> 
+
+                   
+        <div class="publications">                   
+               [(#LOGO_DOCUMENT|sinon{#FICHIER}|image_reduire{200,200}|inserer_attribut{alt,#TITRE})]
+            <p class="title">  
+                <strong>“#TITRE”</strong>, [(#DATE|affdate{Y})]
+            </p>
+            [<p class="descriptif">
+                (#DESCRIPTIF)
+            </p>]
+            [<p>
+            (#EXTENSION|=={pdf}|oui)
+           <a href="#URL_DOCUMENT"  target="_blank">Download</a>                                             
+            </p>]
+        </div>
+    </BOUCLE_docs>

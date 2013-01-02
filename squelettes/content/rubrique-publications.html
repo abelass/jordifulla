@@ -12,17 +12,15 @@
         [(#SET{logo,''})]               
         <div class="publications">
             <p>
-               [(#EXTENSION|=={pdf}|oui)
-                    [(#SET{link,</a>})]
-                    [(#SET{logo,#LOGO_DOCUMENT})]
-                    ]
-               [(#GET{link}|oui)<a href="#URL_DOCUMENT" target="_blank">] 
-               [(#GET{logo}|sinon{#FICHIER}|image_reduire{*,263}|inserer_attribut{alt,#TITRE})]
-               [(#GET{link})]
+                   
+               <a href="[(#URL_PAGE{publication_detail}|parametre_url{id_document,#ID_DOCUMENT})]" class="mediabox"> 
+               [(#LOGO_DOCUMENT|sinon{#FICHIER}|image_reduire{200,200}|inserer_attribut{alt,#TITRE})]
+               </a>
             </p>
-            <p class="publications">
-                [(#GET{link}|oui)<a href="#URL_DOCUMENT" target="_blank">] 
-                <strong>“#TITRE”</strong>, [(#DATE|affdate{Y})][ <strong>(download)</strong>(#GET{link})]
+            <p class="title">
+                <a href="[(#URL_PAGE{publication_detail}|parametre_url{id_document,#ID_DOCUMENT})]" class="mediabox"> 
+                <strong>“#TITRE”</strong>, [(#DATE|affdate{Y})]
+                </a>
             </p>
         </div>
     </BOUCLE_docs>
