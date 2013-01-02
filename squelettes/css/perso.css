@@ -98,3 +98,7 @@ position:relative;
 #documents_galerie{float}
 
 .spip_logos{float:none}
+
+.demo p, .demo a{font-size:40px;line-height:normal}
+
+.navega a, p.navega {font-size:12px}

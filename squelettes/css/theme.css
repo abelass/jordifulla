@@ -178,7 +178,7 @@ text-align: left;
 .publications {
 	float:left;
 	font-family: courier, monospace, helvetica, arial, sans;
-	width:auto;
+	width:200px;
 	background-color:#FFF;
 	font-size:12px;
 	color: #000;
@@ -193,6 +193,8 @@ text-align: left;
 	float:left;
 	margin-bottom: 10px;
 }
+
+.publications .title{vertical-align:bottom;width:200px;clear:both}
 .menu_horitzontal {height:55px; width:100%;	text-decoration: none;}
 .menu_horitzontal a{	background-color: #FFFFFF;	text-decoration: none;}
 .menu_horitzontal a:link{
