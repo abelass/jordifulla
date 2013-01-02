@@ -1,0 +1,15 @@
+<B_documents_portfolio>
+    <div class="bloc clearfix">
+        <ul class="gallery_demo_unstyled gallery_demo">
+            <BOUCLE_documents_portfolio(DOCUMENTS)  {id_evenement ?}{id_rubrique ?}{id_article ?} {par num titre, date}{doublons}{tout}>
+            <li[ class="(#EXPOSE)"]>
+                <a class="mediabox" href="#URL_DOCUMENT" [ title="(#TITRE|attribut_html|couper{80})"]>
+                    [(#EXTENSION|in_array{#LISTE{jpg,png,gif}}|?{
+                     [(#FICHIER|image_reduire{300,*}|inserer_attribut{class,spip_logos}|inserer_attribut{alt,[(#TITRE|attribut_html|couper{80})]})],   
+                   download     
+                    })]</a>
+            </li>
+        </BOUCLE_documents_portfolio>
+        </ul>
+    </div><!--#documents_portfolio-->
+</B_documents_portfolio> 
