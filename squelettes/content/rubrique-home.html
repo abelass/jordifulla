@@ -2,7 +2,9 @@
 
 
 <BOUCLE_img_defaut(DOCUMENTS){id_rubrique}{extension IN gif,png,jpg}{tout}{0,1}{id_document=27}>
-<div id="bg"><img style="margin-left: 0px; margin-top: -46px; display: inline;" src="#FICHIER" alt="Benvinguts | Welcome | Bienvenue" title="Benvinguts | Welcome | Bienvenue" id="bgimg" height="681" width="909"></div>
+<div id="bg">
+    [(#FICHIER|image_reduire{900,*}|inserer_attribut{style,margin-left: 0px; margin-top: -46px; display: inline;}|inserer_attribut{alt,Benvinguts | Welcome | Bienvenue}|inserer_attribut{title,Benvinguts | Welcome | Bienvenue}|inserer_attribut{id,bgimg})]
+    </div>
 </BOUCLE_img_defaut>
 
 
