@@ -16,11 +16,14 @@
                [(#DATE|affdate{d/m/Y})]
            </div> 
            <div class="descr">
-               <div class="titre #EDIT{titre}">#TITRE[, <strong>(#CREDITS)</strong>]</div>
+               <div class="titre #EDIT{titre}">
+                   #TITRE[, <strong>(#CREDITS)</strong>]
+                    <a target="_blank" href="#URL_DOCUMENT" [ title="(#TITRE|attribut_html|couper{80})"]>
+                        <small>[download]</small>    
+                    </a> 
+               </div>
                [<div class="descriptif #EDIT{descriptif}">(#DESCRIPTIF)</div>]        
-               <a target="_blank" href="#URL_DOCUMENT" [ title="(#TITRE|attribut_html|couper{80})"]>
-                    <small>[download]</small>    
-               </a>     
+                   
             </div>
         </li>
         </BOUCLE_docs>
