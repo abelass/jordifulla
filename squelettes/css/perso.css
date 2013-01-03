@@ -101,9 +101,9 @@ position:relative;
 
 .demo p, .demo a{font-size:40px;line-height:normal}
 
-.navega a, p.navega {font-size:12px}
+.navega a, p.navega {font-size:12px;margin-top: 30px;}
 
-.liste-evenements,.liste-documents {margin-top:10px}
+.liste-evenements,.liste-documents {margin-top:30px}
 
 .liste-evenements li,.liste-evenements li p ,.liste-evenements li a    {font-size: 18px;
     line-height: normal;clear:both}
