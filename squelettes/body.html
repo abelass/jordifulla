@@ -1,5 +1,5 @@
-<body[(#ID_RUBRIQUE|=={1}|oui|et{#ID_ARTICLE|=={non}})class="home"]>
-	<section class="pagewrapper templatepagewrapper[ (#ID_RUBRIQUE|=={1}|oui)home]">
+<body [class="(#COMPOSITION)"]>
+	<section class="pagewrapper templatepagewrapper [class="(#COMPOSITION)"]">
 		<nav class="hornav clearfix" id="nav"><INCLURE{fond=inclure/nav,env} /></nav>
 		<section class="content templatecontent" role="main">
 			<INCLURE{fond=content/#ENV{type-page},env} />
