@@ -24,7 +24,7 @@
 	<div style="width: 904px;" id="thumbnoScroller" class="outer_container">
 		<div style="left: 0px;" class="container">
 			<BOUCLE_thumbs(DOCUMENTS){id_rubrique}{extension IN gif,png,jpg}{tout}{par fichier}>
-			 <a href="[(#FICHIER|image_reduire{700,0}|extraire_attribut{src})]">[(#FICHIER
+			 <a href="[(#FICHIER|image_reduire{900,0}|extraire_attribut{src})]">[(#FICHIER
 			|image_passe_partout{70,44}
 			|image_recadre{70,44}
 		|inserer_attribut{class,thumb}
