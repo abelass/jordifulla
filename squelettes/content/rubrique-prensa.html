@@ -8,9 +8,8 @@
     [<div class="notes"><h2 class="h2"><:info_notes:></h2>(#NOTES)</div>]
 
         <B_docs>
-        [<p class="pagination">(#PAGINATION)</p>]
         <ul class="liste liste-documents">     
-        <BOUCLE_docs(DOCUMENTS){id_rubrique}{!par date}{pagination}>
+        <BOUCLE_docs(DOCUMENTS){id_rubrique}{!par date}>
        <li class="item menu-entree">
            <div class="date">
                [(#DATE|affdate{d/m/Y})]

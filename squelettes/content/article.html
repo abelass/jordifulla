@@ -10,9 +10,8 @@
     [<div class="notes"><h2 class="h2"><:info_notes:></h2>(#NOTES)</div>]        
         
         <B_events>
-        [<p class="pagination">(#PAGINATION)</p>]
         <ul class="liste liste-evenements">     
-        <BOUCLE_events(EVENEMENTS){id_article}{!par date_debut}{pagination}>
+        <BOUCLE_events(EVENEMENTS){id_article}{!par date_debut}>
        <li class="item menu-entree">
            <div class="date">[(#DATE_DEBUT|affdate{d/m/Y})][(#DATE_DEBUT|affdate{d-m-Y}|!={[(#DATE_FIN|affdate{d-m-Y})]}|oui)[ - (#DATE_FIN|affdate{d/m/Y})]]
            </div> 
