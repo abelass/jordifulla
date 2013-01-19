@@ -128,7 +128,12 @@ position:relative;
 
 .liste-documents li,.liste-documents li p ,.liste-documents li a    {font-size: 14px;
     line-height: normal} 
+    
+.liste-documents li{line-height:25px}    
 .descr p {margin-bottom:0.2em}
 
 .liste-documents li .date{width:10%}
 .liste-documents li .descr{width:90%}
+
+
+#cboxLoadingGraphic{background:url(img/ajax-loader.gif) center center no-repeat;}

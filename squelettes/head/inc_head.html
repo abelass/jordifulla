@@ -1,11 +1,3 @@
-<BOUCLE_rubrique_head(RUBRIQUES) {id_rubrique}{tout}>
-<title>[(#TITRE|textebrut) - ][(#NOM_SITE_SPIP|textebrut)]</title>
-[<meta name="description" content="(#INTRODUCTION{150}|textebrut)" />]
-[<link rel="canonical" href="(#URL_RUBRIQUE|url_absolue)" />]
-
-[(#REM) Lien vers le flux RSS de la rubrique ]
-<link rel="alternate" type="application/rss+xml" title="<:syndiquer_rubrique:>" href="[(#URL_PAGE{backend}|parametre_url{id_rubrique,#ID_RUBRIQUE})]" />
-[(#ID_RUBRIQUE|=={4}|oui)
 <style type="text/css" media="screen,projection">
     /* BEGIN DEMO STYLE */
     *{margin:0;padding:0}
@@ -35,14 +27,10 @@
     
     html { 
     
-            background: url([(#CHEMIN{css/img/bck_contact.png})]) no-repeat center center fixed; 
+            background: url(#CHEMIN{css/img/bck_contact.png}) no-repeat center center fixed; 
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
     }
 </style>
-    [<link rel="stylesheet" href="(#CHEMIN{css/contact.css})" type="text/css" />]
-    
-]
-</BOUCLE_rubrique_head>
