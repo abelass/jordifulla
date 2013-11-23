@@ -1,66 +1,66 @@
 * {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 body {
-    overflow: hidden;
+	overflow: hidden;
 }
 h1, h2 {
 }
 a {
-    color: #000000;
-    font-size: 11px;
-    padding: 2px 3px 3px;
-    text-decoration: none;
+	color: #000000;
+	font-size: 11px;
+	padding: 2px 3px 3px;
+	text-decoration: none;
 }
 a:hover {
-    color: #6677AA;
+	color: #6677AA;
 }
 .caption {
-    color: #888877;
-    font-style: italic;
+	color: #888877;
+	font-style: italic;
 }
 .demo {
-    border-top: thin double #333333;
-    margin-left: 0;
-    margin-top: 110px;
-    max-width: 90%;
-    overflow: auto;
-    position: relative;
+	border-top: thin double #333333;
+	margin-left: 0;
+	margin-top: 110px;
+	max-width: 90%;
+	overflow: auto;
+	position: relative;
 }
 .gallery_demo {
-    margin: 0 auto;
-    width: 702px;
+	margin: 0 auto;
+	width: 702px;
 }
 .gallery_demo li {
-    background-color: #999999;
-    border: medium none;
-    height: 50px;
-    width: 68px;
+	background-color: #999999;
+	border: medium none;
+	height: 50px;
+	width: 68px;
 }
 .gallery_demo li div {
-    left: 240px;
+	left: 240px;
 }
 .gallery_demo li div .caption {
-    font: italic 0.7em/1.4 georgia,serif;
+	font: italic 0.7em/1.4 georgia, serif;
 }
 #main_image {
-    margin: 0 auto 60px;
+	margin: 0 auto 60px;
 }
 #main_image img {
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 .navega {
-    color: #000000;
-    font-size: 12px;
-    margin-bottom: 5px;
-    padding: 5px 3px 3px 5px;
-    text-decoration: none;
+	color: #000000;
+	font-size: 12px;
+	margin-bottom: 5px;
+	padding: 5px 3px 3px 5px;
+	text-decoration: none;
 }
 * {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 html {
-    background: url("img/bck_contact.png") no-repeat fixed center center / cover transparent;
+	background: url("img/bck_contact.png") no-repeat fixed center center /cover transparent;
 }
